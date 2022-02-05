@@ -1,0 +1,17 @@
+base-config: &base
+  node_version: 13.0.0
+  os: ubuntu
+  package_manager: yarn
+  run:
+    - yarn install
+    - NODE_ENV=${ENVIRONMENT} yarn build
+
+production:
+  <<: *base
+  env:
+    - ENVIRONMENT: production
+
+staging:
+  <<: *base
+  env:
+    - ENVIRONMENT: staging

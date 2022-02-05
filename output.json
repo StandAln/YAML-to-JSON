@@ -1,0 +1,39 @@
+{
+  "base-config": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": [
+      "yarn install",
+      "NODE_ENV=${ENVIRONMENT} yarn build"
+    ]
+  },
+  "production": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": [
+      "yarn install",
+      "NODE_ENV=${ENVIRONMENT} yarn build"
+    ],
+    "env": [
+      {
+        "ENVIRONMENT": "production"
+      }
+    ]
+  },
+  "staging": {
+    "node_version": "13.0.0",
+    "os": "ubuntu",
+    "package_manager": "yarn",
+    "run": [
+      "yarn install",
+      "NODE_ENV=${ENVIRONMENT} yarn build"
+    ],
+    "env": [
+      {
+        "ENVIRONMENT": "staging"
+      }
+    ]
+  }
+}
